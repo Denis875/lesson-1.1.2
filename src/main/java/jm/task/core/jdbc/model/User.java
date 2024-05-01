@@ -1,13 +1,15 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+import org.hibernate.annotations.ValueGenerationType;
 
-@Table
+import javax.persistence.*;
+
+@Entity
+@Table(name="user")
 public class User {
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
